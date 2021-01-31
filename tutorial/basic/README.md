@@ -15,7 +15,10 @@
         KeDllOpen("kesh.dll")
     EndIf
 ```
-- Then specify the **adb.exe** path ```KeSetAdbPath("D:\LDPlayer\LDPlayer4.0\adb.exe")```
+- Then specify the **adb.exe** path
+```autoit
+KeSetAdbPath("D:\LDPlayer\LDPlayer4.0\adb.exe")
+```
 - Specify the **adb device** if needed```KeSetAdbDevice("emulator-5555")```
 - Inject and start the **kesh server** on the android device
 ```autoit
