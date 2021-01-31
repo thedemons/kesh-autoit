@@ -27,10 +27,20 @@ If $socket <= 0 Then
 EndIf
 ```
 
-### Get process id and handle
+### Get process id and open its handle
 ```autoit
 ; get pid of the process "com.google.android.gms"
 Local $pid = KeGetProcessID("com.google.android.gms")
 ; get process handle
 Local $hProcess = KeOpenProcess($pid)
+```
+
+### Read and write the process memory
+```autoit
+; get the base address of the module "app_process32"
+Local $baseAddress = KeGetModuleBase($pid, "app_process32")
+; read the value at the base address
+Local $readBase = KeReadInt($hProcess, $baseAddress)
+; write a value to the base address
+KeWriteInt($hProcess, $baseAddress, 999999)
 ```
