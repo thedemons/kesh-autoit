@@ -17,9 +17,12 @@
 ```
 - Then specify the **adb.exe** path
 ```autoit
-KeSetAdbPath("D:\LDPlayer\LDPlayer4.0\adb.exe")
+    KeSetAdbPath("D:\LDPlayer\LDPlayer4.0\adb.exe")
 ```
-- Specify the **adb device** if needed```KeSetAdbDevice("emulator-5555")```
+- Specify the **adb device** if needed
+```autoit
+    KeSetAdbDevice("emulator-5555")
+```
 - Inject and start the **kesh server** on the android device
 ```autoit
     $socket = KeServerCreate($port = 0) ;// if $port = 0 then it'll select a random unsed port
