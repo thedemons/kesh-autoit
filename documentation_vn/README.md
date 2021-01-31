@@ -1,5 +1,5 @@
 # kesh-autoit
-Tthư viện Android memory cho AutoIt
+Thư viện Android memory cho AutoIt
 
 ### Kesh hoạt động như thế nào?
 - **kesh** chạy một server process trên thiết bị android và giao tiếp với process windows thông qua **tcp socket**.
