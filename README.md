@@ -12,7 +12,7 @@ A simple Android memory library for AutoIt
 - **Cheat Engine** can then scan and attach breakpoints directly in the android device
 
 ### Getting started
-- [Start kesh and use with Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation#basic-stuff-about-kesh)
+- [Start kesh and use with Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation#start-kesh-and-use-with-cheat-engine)
 - [Process manipulation](https://github.com/thedemons/kesh-autoit/tree/main/documentation/process#process-manipulation)
 - [Memory manipulation](https://github.com/thedemons/kesh-autoit/tree/main/documentation/memory#memory-manipulation)
 - [Examples](https://github.com/thedemons/kesh-autoit/tree/main/documentation/examples)
