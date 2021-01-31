@@ -1,8 +1,8 @@
 # Chạy kesh và kết nối với Cheat Engine
 
 ### Kesh hoạt động như thế nào?
-- **kesh** chạy một server process trên thiết bị android và giao tiếp với process windows thông qua **tcp socket**.
-- Nó sử dụng server đó để thao tác với ```memory, process, module, thread,..``` trực tiếp trên thiết bị android.
+- **kesh** chạy một process **kesh server** trên thiết bị android và giao tiếp với process windows thông qua **tcp socket**.
+- Nó sử dụng **kesh server** để thao tác với ```memory, process, module, thread,..``` trực tiếp trên thiết bị android.
 - **kesh server** là một phiên bản được mod lại từ [ceserver](https://github.com/cheat-engine/cheat-engine/tree/master/Cheat%20Engine/ceserver "ceserver") của **Cheat Engine**
 <br>
 
