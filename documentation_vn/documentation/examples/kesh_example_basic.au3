@@ -2,59 +2,56 @@
 #include "kesh.au3"
 
 
-; open kesh library
+; Mở thư viện kesh
 If @AutoItX64 Then
 	KeDllOpen("kesh64.dll")
 Else
 	KeDllOpen("kesh.dll")
 EndIf
 
-; set path to adb.exe
+; set dường dẫn tới adb.exe
 Local $AdbPath = "D:\LDPlayer\LDPlayer4.0\adb.exe"
 KeSetAdbPath($AdbPath)
 
-; connect to the kesh server on port 21758, if the server isn't running then start it
+; kết nối tới kesh server ở port 21758, nếu server chưa chạy thì tạo mới
 Local $socket = KeServerConnectOrCreate(21758)
 
 If $socket <= 0 Then
-	MsgBox(16, "Error", "Failed to open kesh server")
+	MsgBox(16, "Lỗi", "Chạy kesh server thất bại")
 	Exit
 EndIf
 
-; use this if you have multiple server (emulator)
-KeServerSetSocket($socket)
-
-; get list of all process
+; lấy danh sách process
 Local $aProcessList = KeGetProcessList()
 _ArrayDisplay($aProcessList)
 
-; get pid of "com.google.android.gms"
+; lấy pid của process "com.google.android.gms"
 Local $processName = "com.google.android.gms" ; "/system/bin/app_process32 com.google.android.gms"
 Local $pid = KeGetProcessID($processName)
-MsgBox(0,"PID of " & $processName, $pid)
+MsgBox(0,"PID của " & $processName, $pid)
 
-; get list of all module in the process
+; lấy danh sách tất cả module trong process
 Local $aModuleList = KeGetProcessModuleList($pid)
 _ArrayDisplay($aModuleList)
 
-; get process handle
+; mở process handle
 Local $hProcess = KeOpenProcess($pid)
 MsgBox(0,"Process handle", $hProcess)
 
-; get module base address
+; lấy base address của module "app_process32"
 Local $baseAddress = KeGetModuleBase($pid, "app_process32")
 MsgBox(0,"Module base address", $baseAddress)
 
-; read base address value
+; đọc giá trị tại base address
 Local $readBase = KeReadInt($hProcess, $baseAddress)
-MsgBox(0,"Value at base address", $readBase)
+MsgBox(0,"Giá trị tại base address", $readBase)
 
-; write base address value
+; ghi giá trị vào base address
 KeWriteInt($hProcess, $baseAddress, 999999)
 
-; read the value again
+; đọc giá trị lại lần nữa
 Local $readBaseNew = KeReadInt($hProcess, $baseAddress)
-MsgBox(0,"New value at base address", $readBaseNew)
+MsgBox(0,"Giá trị mới tại base address", $readBaseNew)
 
-; restore the value
+; backup lại giá trị
 KeWriteInt($hProcess, $baseAddress, $readBase)
