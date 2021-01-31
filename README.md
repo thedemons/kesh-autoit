@@ -7,9 +7,9 @@ A simple Android memory library for AutoIt
 - The **kesh server** is a modified version of the [ceserver](https://github.com/cheat-engine/cheat-engine/tree/master/Cheat%20Engine/ceserver "ceserver") from **Cheat Engine**
 
 ### Use Cheat Engine with kesh
-- Cheat Engine can connect with kesh to work on android devices
+- **Cheat Engine** can connect with kesh to work on android devices
 - This can be done with this [tutorial](https://github.com/thedemons/kesh-autoit/tree/main/documentation#start-kesh-server-on-the-android-device "tutorial")
-- Cheat Engine can then scan and attach breakpoints directly in the android device
+- **Cheat Engine** can then scan and attach breakpoints directly in the android device
 
 ### Getting started
 - [Start kesh and use with Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation#basic-stuff-about-kesh)
