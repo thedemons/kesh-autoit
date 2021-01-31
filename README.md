@@ -15,6 +15,7 @@ A simple Android memory library for AutoIt
 - [Start kesh and use with Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation#basic-stuff-about-kesh)
 - [Process manipulation](https://github.com/thedemons/kesh-autoit/tree/main/documentation/process#process-manipulation)
 - [Memory manipulation](https://github.com/thedemons/kesh-autoit/tree/main/documentation/memory#memory-manipulation)
+- [Examples](https://github.com/thedemons/kesh-autoit/tree/main/documentation/examples)
 
 ### Contributors
 - thedemons
