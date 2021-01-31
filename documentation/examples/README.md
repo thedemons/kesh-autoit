@@ -49,7 +49,9 @@ Local $dev2_name = "127.0.0.1:5555"
 
 ; Start kesh on device 1
 KeSetAdbDevice($dev1_name)
-Local $socket_dev1 = KeServerCreate() ;// Use KeServerCreate($port = 0) to auto select an unsed port, you can also use KeServerConnectOrCreate() with a pre-defined port
+; Use KeServerCreate($port = 0) to auto select an unsed port,
+; you can also use KeServerConnectOrCreate() with a pre-defined port
+Local $socket_dev1 = KeServerCreate() 
 
 ; Start kesh on device 2
 KeSetAdbDevice($dev2_name)
