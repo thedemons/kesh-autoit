@@ -20,8 +20,12 @@ Thư viện Android memory cho AutoIt
 ### Người đóng góp
 - thedemons
 - Nguyễn Mạnh Tường
-- Nguyễn Hiến
 
 ### Ủng hộ
 - Project **kesh** hiện vẫn đang được phát triển và vẫn còn nhiều tính năng đang được thêm vào, sự ủng hộ từ cộng đồng giúp đỡ rất nhiều cho việc phát triển project, hãy liên hệ với mình bất cứ khi nào bạn muốn ủng hộ cho project nhé! ♥<br/>
 - Discord: [thedemons#8671](https://discord.com/users/269920976236576769)
+
+### Người ủng hộ
+- Nguyễn Mạnh Tường
+- Nguyễn Hiến
+- Đỗ Vĩnh Trung
