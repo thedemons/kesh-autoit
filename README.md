@@ -20,7 +20,6 @@ A simple Android memory library for AutoIt
 ### Contributors
 - thedemons
 - Nguyen Manh Tuong
-- Nguyen Hien
 
 ### Donation
 - This project is under development, it still has a lot of features being developed, it's a very big help of your donation to keep the project running, please contact me anytime you feel like it! ♥
