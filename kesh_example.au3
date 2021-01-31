@@ -15,7 +15,7 @@ Local $AdbPath = "D:\LDPlayer\LDPlayer4.0\adb.exe"
 KeSetAdbPath($AdbPath)
 
 ; set specific device if needed
-;~ KeSetAdbDevice("emulator-5554")
+KeSetAdbDevice("emulator-5554")
 
 ; connect to the kesh server on port 21758, if the server isn't running then start it
 Local $socket = KeServerConnectOrCreate(21758)
@@ -35,9 +35,11 @@ _ArrayDisplay($aProcessList)
 ; get pid of "com.google.android.gms"
 Local $processName = "com.google.android.gms" ; "/system/bin/app_process32 com.google.android.gms"
 Local $pid = KeGetProcessID($processName)
-
-
 MsgBox(0,"PID of " & $processName, $pid)
+
+; get list of all module in the process
+Local $aModuleList = KeGetProcessModuleList($pid)
+_ArrayDisplay($aModuleList)
 
 ; get process handle
 Local $hProcess = KeOpenProcess($pid)
@@ -60,5 +62,3 @@ MsgBox(0,"New value at base address", $readBaseNew)
 
 ; restore the value
 KeWriteInt($hProcess, $baseAddress, $readBase)
-
-
