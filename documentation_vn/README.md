@@ -1,49 +1,26 @@
-# Những thứ cơ bản về kesh
+# kesh-autoit
+Tthư viện Android memory cho AutoIt
 
 ### Kesh hoạt động như thế nào?
 - **kesh** chạy một server process trên thiết bị android và giao tiếp với process windows thông qua **tcp socket**.
 - Nó sử dụng server đó để thao tác với ```memory, process, module, thread,..``` trực tiếp trên thiết bị android.
 - **kesh server** là một phiên bản được mod lại từ [ceserver](https://github.com/cheat-engine/cheat-engine/tree/master/Cheat%20Engine/ceserver "ceserver") của **Cheat Engine**
-<br>
 
-### Chạy kesh server trên thiết bị android
-- Đầu tiên chúng ta cần load kesh.dll
-```autoit
-    If @AutoItX64 Then
-        KeDllOpen("kesh64.dll")
-    Else
-        KeDllOpen("kesh.dll")
-    EndIf
-```
-- Sau đó set đường dẫn tới **adb.exe**
-```autoit
-    KeSetAdbPath("D:\LDPlayer\LDPlayer4.0\adb.exe")
-```
-- Set **adb device** nếu cần
-```autoit
-    KeSetAdbDevice("emulator-5555")
-```
-- Inject và chạy **kesh server** trên thiết bị android
-```autoit
-    $socket = KeServerCreate($port = 0) ;// nếu $port = 0 thì nó sẽ chọn ngẫu nhiên một port chưa được dùng
-```
-- Port của **kesh server** có thể được get bằng cách ```KeServerGetPort($socket)```
+### Sử dụng Cheat Engine với kesh
+- **Cheat Engine** có thể kết nối với kesh để sử dụng trên những thiết bị android
+- Có thể làm dựa theo bài [hướng dẫn](https://github.com/thedemons/kesh-autoit/tree/main/documentation#start-kesh-server-on-the-android-device "tutorial") này
+- **Cheat Engine** sau đó có thể scan và debug trực tiếp trên thiết bị android
 
-<br>
+### Hướng dẫn
+- [Chạy kesh và kết nối với Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation_vn/documentation#ch%E1%BA%A1y-kesh-v%C3%A0-k%E1%BA%BFt-n%E1%BB%91i-v%E1%BB%9Bi-cheat-engine)
+- [Thao tác với process](https://github.com/thedemons/kesh-autoit/tree/main/documentation/process#process-manipulation)
+- [Thao tác với memory](https://github.com/thedemons/kesh-autoit/tree/main/documentation/memory#memory-manipulation)
 
-### Kết nối tới một kesh server đã mở
-- Nếu bạn đã chạy **kesh server** trước đó, bạn có thể kết nối với nó bằng cách
-```autoit
-    KeServerConnect(21758) ;// kết nối tới port 21758
-```
-- Hoặc nếu không kết nối được thì sẽ chạy lại **kesh server**
-```autoit
-    KeServerConnectOrCreate(21758)
-```
+### Người đóng góp
+- thedemons
+- Nguyễn Mạnh Tường
+- Nguyễn Hiến
 
-<br>
-
-### Sử dụng Cheat Engine với kesh server
-- Sau khi bạn đã chạy **kesh server**, bạn có thể kết nối **Cheat Engine** với nó.
-- Nhấn nút **Select Process**, chọn **Network**, nhập số port bạn set khi chạy **kesh server**, sau đó click **Connect**.<br>
-<p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/ce_setup.jpg" width="400"></p>
+### Ủng hộ
+Project **kesh** hiện vẫn đang được phát triển và vẫn còn nhiều tính năng đang được thêm vào, sự ủng hộ từ cộng đồng giúp đỡ rất nhiều cho việc phát triển project, hãy liên hệ với mình bất cứ khi nào bạn muốn ủng hộ cho project nhé! ♥<br/>
+Discord: [thedemons#8671](https://discord.com/users/269920976236576769)
