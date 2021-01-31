@@ -25,7 +25,7 @@
 ```
 - Inject và chạy **kesh server** trên thiết bị android
 ```autoit
-    $socket = KeServerCreate($port = 0) ;// if $port = 0 then it'll select a random unsed port
+    $socket = KeServerCreate($port = 0) ;// nếu $port = 0 thì nó sẽ chọn ngẫu nhiên một port chưa được dùng
 ```
 - Port của **kesh server** có thể được get bằng cách ```KeServerGetPort($socket)```
 
@@ -34,7 +34,7 @@
 ### Kết nối tới một kesh server đã mở
 - Nếu bạn đã chạy **kesh server** trước đó, bạn có thể kết nối với nó bằng cách
 ```autoit
-    KeServerConnect(21758) ;// connect to port 21758
+    KeServerConnect(21758) ;// kết nối tới port 21758
 ```
 - Hoặc nếu không kết nối được thì sẽ chạy lại **kesh server**
 ```autoit
