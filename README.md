@@ -8,4 +8,19 @@ A simple Android memory library for AutoIt
 
 ### Use Cheat Engine with kesh
 - Cheat Engine can connect with kesh to work on android devices
-- This can be done using this [tutorial](https://github.com/thedemons/kesh-autoit/tree/main/documentation#start-kesh-server-on-the-android-device "tutorial")
+- This can be done with this [tutorial](https://github.com/thedemons/kesh-autoit/tree/main/documentation#start-kesh-server-on-the-android-device "tutorial")
+- Cheat Engine can then scan and attach breakpoints directly in the android device
+
+### Documentation
+- The documentation is still being written
+- [Basic stuffs about kesh](https://github.com/thedemons/kesh-autoit/tree/main/documentation#basic-stuff-about-kesh)
+- [Process manipulation](https://github.com/thedemons/kesh-autoit/tree/main/documentation/process#process-manipulation)
+
+### Contributors
+- thedemons
+- Nguyen Manh Tuong
+- Nguyen Hien
+
+### Donation
+This project is under development, it still has a lot of features being developed, it's a very big help of your donation to keep the project running, please contact me anytime you feel like it!<br/>
+Discord: [thedemons#8671](https://discord.com/users/269920976236576769)
