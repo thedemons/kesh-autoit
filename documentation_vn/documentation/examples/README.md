@@ -1,71 +1,71 @@
 # Examples
-### Setup kesh
+### Cài đặt kesh
 ```autoit
-; open kesh library
+; mở thư viện kesh
 If @AutoItX64 Then
     KeDllOpen("kesh64.dll")
 Else
     KeDllOpen("kesh.dll")
 EndIf
 
-; set path to adb.exe
+; set đường dẫn tới adb.exe
 Local $AdbPath = "D:\LDPlayer\LDPlayer4.0\adb.exe"
 KeSetAdbPath($AdbPath)
 ```
 
-### Start the kesh server
+### Chạy kesh server
 ```autoit
-; connect to the kesh server on port 21758, if the server isn't running then start it
+; kết nối tới kesh server ở port 21758, nếu server chưa chạy thì tạo mới
 Local $socket = KeServerConnectOrCreate(21758)
 
 If $socket <= 0 Then
-    MsgBox(16, "Error", "Failed to open kesh server")
+    MsgBox(16, "Lỗi", "Chạy kesh server thất bạt")
     Exit
 EndIf
 ```
 
-### Get process id and open its handle
+### Lấy id của process và mở handle của nó
 ```autoit
-; get pid of the process "com.google.android.gms"
+; lấy pid của process "com.google.android.gms"
 Local $pid = KeGetProcessID("com.google.android.gms")
-; get process handle
+; mở handle của process
 Local $hProcess = KeOpenProcess($pid)
 ```
 
-### Read and write the process memory
+### Đọc và ghi process memory
 ```autoit
-; get the base address of the module "app_process32"
+; lấy base address của module "app_process32"
 Local $baseAddress = KeGetModuleBase($pid, "app_process32")
-; read the value at the base address
+; đọc giá trị tại base address
 Local $readBase = KeReadInt($hProcess, $baseAddress)
-; write a value to the base address
+; ghi một giá trị vào base address
 KeWriteInt($hProcess, $baseAddress, 999999)
 ```
 
-### Use kesh with multiple devices
+### Sử dụng kesh với nhiều thiết bị
 ```autoit
 Local $dev1_name = "emulator-5554"
 Local $dev2_name = "127.0.0.1:5555"
 
-; Start kesh on device 1
+; Chạy kesh server trên thiết bị 1
 KeSetAdbDevice($dev1_name)
-; Use KeServerCreate($port = 0) to auto select an unsed port,
-; you can also use KeServerConnectOrCreate() with a pre-defined port
+; Dùng KeServerCreate($port = 0) để tự động chọn một port chưa được dùng
+; chúng ta cũng có thể dùng KeServerConnectOrCreate() với một port đã được định sẵn
 Local $socket_dev1 = KeServerCreate() 
 
-; Start kesh on device 2
+; Chạy kesh server trên thiết bị 2
 KeSetAdbDevice($dev2_name)
 Local $socket_dev2 = KeServerCreate()
 
-; Switch to device 1
+; Chuyển sang thiết bị 1
 KeSetAdbDevice($dev1_name)
 KeServerSetSocket($socket_dev1)
-; Get a list of process on device 1
+; Lấy danh sách process trên thiết bị 1
 _ArrayDisplay(KeGetProcessList())
 
-; Switch to device 2
+; Chuyển sang thiết bị 2
 KeSetAdbDevice($dev2_name)
 KeServerSetSocket($socket_dev2)
-; Get a list of process on device 1
+; Lấy danh sách process trên thiết bị 2
 _ArrayDisplay(KeGetProcessList())
 ```
