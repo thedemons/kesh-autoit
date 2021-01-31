@@ -37,7 +37,7 @@
 <br>
 
 ### Mở handle tới process
-- Handle này được dùng để thực hiện các theo tác memory với process này
+- Handle này được dùng để thực hiện các thao tác memory với process này
 ```autoit
     $hProcess = KeOpenProcess($pid)
 ```
