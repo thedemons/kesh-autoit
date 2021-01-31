@@ -46,4 +46,4 @@
 ### Use Cheat Engine with kesh server
 - After you start the **kesh server**, you can connect **Cheat Engine** to it
 - Click the **Select Process** button, then click **Network**, enter the port number you set when you start the **kesh server**, then click **Connect**.<br>
-<center><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/ce_setup.jpg" width="505"></center>
+<p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/ce_setup.jpg" width="505"></p>
