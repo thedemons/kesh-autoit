@@ -17,10 +17,6 @@ Thư viện Android memory cho AutoIt
 - [Thao tác với memory](https://github.com/thedemons/kesh-autoit/blob/main/documentation_vn/documentation/memory/README.md#%C4%91%E1%BB%8Dc-m%E1%BB%99t-gi%C3%A1-tr%E1%BB%8B-t%E1%BB%AB-memory)
 - [Mã nguồn mẫu](https://github.com/thedemons/kesh-autoit/tree/main/documentation_vn/documentation/examples#m%C3%A3-ngu%E1%BB%93n-m%E1%BA%ABu)
 
-### Người đóng góp
-- thedemons
-- Nguyễn Mạnh Tường
-
 ### Ủng hộ
 - Project **kesh** hiện vẫn đang được phát triển và vẫn còn nhiều tính năng đang được thêm vào, sự ủng hộ từ cộng đồng giúp đỡ rất nhiều cho việc phát triển project, hãy liên hệ với mình bất cứ khi nào bạn muốn ủng hộ cho project nhé! ♥<br/>
 - Discord: [thedemons#8671](https://discord.com/users/269920976236576769)
