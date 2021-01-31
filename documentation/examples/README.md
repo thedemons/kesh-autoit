@@ -55,15 +55,15 @@ Local $socket_dev1 = KeServerCreate()
 KeSetAdbDevice($dev2_name)
 Local $socket_dev2 = KeServerCreate()
 
-; Do stuff on device 1
+; Switch to device 1
 KeSetAdbDevice($dev1_name)
 KeServerSetSocket($socket_dev1)
+; Get a list of process on device 1
 _ArrayDisplay(KeGetProcessList())
-...
 
-; Do stuff on device 2
+; Switch to device 2
 KeSetAdbDevice($dev2_name)
 KeServerSetSocket($socket_dev2)
+; Get a list of process on device 1
 _ArrayDisplay(KeGetProcessList())
-...
 ```
