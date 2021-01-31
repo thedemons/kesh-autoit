@@ -1,8 +1,8 @@
 # Start kesh and use with Cheat Engine
 
 ### How does kesh work?
-- **kesh** load a server process on the android device that communicate with windows using **tcp socket**.
-- It uses that server to manipulate ```memory, process, module, thread,..``` directly on the android device.
+- **kesh** load a process **kesh server** on the android device that communicate with windows using **tcp socket**.
+- It uses the **kesh server** to manipulate ```memory, process, module, thread,..``` directly on the android device.
 - The **kesh server** is a modified version of the [ceserver](https://github.com/cheat-engine/cheat-engine/tree/master/Cheat%20Engine/ceserver "ceserver") from **Cheat Engine**
 <br>
 
