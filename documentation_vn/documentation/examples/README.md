@@ -1,4 +1,4 @@
-# Examples
+# Mã nguồn mẫu
 ### Cài đặt kesh
 ```autoit
 ; mở thư viện kesh
