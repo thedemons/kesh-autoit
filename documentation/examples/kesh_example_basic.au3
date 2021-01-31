@@ -21,9 +21,6 @@ If $socket <= 0 Then
 	Exit
 EndIf
 
-; use this if you have multiple server (emulator)
-KeServerSetSocket($socket)
-
 ; get list of all process
 Local $aProcessList = KeGetProcessList()
 _ArrayDisplay($aProcessList)
