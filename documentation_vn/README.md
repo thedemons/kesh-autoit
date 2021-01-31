@@ -13,8 +13,8 @@ Tthư viện Android memory cho AutoIt
 
 ### Hướng dẫn
 - [Chạy kesh và kết nối với Cheat Engine](https://github.com/thedemons/kesh-autoit/tree/main/documentation_vn/documentation#ch%E1%BA%A1y-kesh-v%C3%A0-k%E1%BA%BFt-n%E1%BB%91i-v%E1%BB%9Bi-cheat-engine)
-- [Thao tác với process](https://github.com/thedemons/kesh-autoit/tree/main/documentation/process#process-manipulation)
-- [Thao tác với memory](https://github.com/thedemons/kesh-autoit/tree/main/documentation/memory#memory-manipulation)
+- [Thao tác với process](https://github.com/thedemons/kesh-autoit/tree/main/documentation_vn/documentation/process#thao-t%C3%A1c-v%E1%BB%9Bi-process)
+- [Thao tác với memory](https://github.com/thedemons/kesh-autoit/blob/main/documentation_vn/documentation/memory/README.md#%C4%91%E1%BB%8Dc-m%E1%BB%99t-gi%C3%A1-tr%E1%BB%8B-t%E1%BB%AB-memory)
 
 ### Người đóng góp
 - thedemons
