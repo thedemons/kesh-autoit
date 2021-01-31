@@ -22,7 +22,6 @@
 ```
 - The port can then be retrieved like this ```KeServerGetPort($socket)```
 
-<br/>
 ### Connect to an existing kesh server
 - If you already start the **kesh server** , you can connect it using this
 ```autoit
