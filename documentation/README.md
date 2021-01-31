@@ -1,4 +1,4 @@
-# Basic stuff about kesh
+# Start kesh and connect with Cheat Engine
 
 ### How does kesh work?
 - **kesh** load a server process on the android device that communicate with windows using **tcp socket**.
