@@ -4,7 +4,6 @@
 - **kesh** load a server process on the android device that communicate with windows using **tcp socket**.
 - It uses that server to manipulate ```memory, process, module, thread,..``` directly on the android device.
 - The **kesh server** is a modified version of the [ceserver](https://github.com/cheat-engine/cheat-engine/tree/master/Cheat%20Engine/ceserver "ceserver") from **Cheat Engine**
-
 <br>
 
 ### Start kesh server on the android device
