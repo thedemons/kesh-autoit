@@ -1,6 +1,6 @@
 # Process manipulation
-### Getting a list of processes
-- To get a list of all running processes, use
+### Get a list of processes
+- To get a list of all running processes, use:
 ```autoit
     $aProcess = KeGetProcessList()
 	_ArrayDisplay($aProcess)
@@ -10,8 +10,8 @@
 
 <br>
 
-### Getting the process ID
-- The process ID can be retrieved using
+### Get the process ID
+- The process ID can be retrieved using:
 ```autoit
     $pid = KeGetProcessID($processName)
 ```
@@ -20,9 +20,24 @@
 
 <br>
 
+### Get a list of modules in the process
+- To get a list of all modules in the process, use:
+```autoit
+    $aModule = KeGetProcessModuleList($pid)
+	_ArrayDisplay($aModule)
+```
+- This function returns a 2D array of module base address and name, the results should look like this:<p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/process/getprocessmodulelistresult.jpg" width="500"></p>
+
+## Get the base address of a module
+- Get the base address of the module ```app_process32```:
+```autoit
+    $baseAddress = KeGetModuleBase($pid, "app_process32")
+```
+
+<br>
+
 ### Open handle to the process
-- Once we got the process ID, we can use it to open the process handle
+- This handle can later be used to manipulate the process
 ```autoit
     $hProcess = KeOpenProcess($pid)
 ```
-- This handle can later be used to manipulate the process
