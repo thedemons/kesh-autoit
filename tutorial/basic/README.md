@@ -26,10 +26,8 @@
 ```autoit
     $socket = KeServerCreate($port = 0) ;// if $port = 0 then it'll select a random unsed port
 ```
-- The port can then be retrieved like this
-```autoit
-    KeServerGetPort($socket)
-```
+- The port can then be retrieved like this ```KeServerGetPort($socket)```
+
 
 ### Connect to an existing kesh server
 - If you already start the **kesh server** , you can connect it using this
