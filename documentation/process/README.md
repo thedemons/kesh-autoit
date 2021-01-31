@@ -7,7 +7,7 @@
 ```
 - It will return a 2D array of process id and process name, the results should look like this
 <p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/process/getprocesslistresult.png" width="500"></p>
-- The process name includes the path such as ```/system/bin/app_process32 com.google.android.gms```
+- The process name includes the path such as ```/system/bin/app_process32com.google.android.gms```
 
 <br>
 
