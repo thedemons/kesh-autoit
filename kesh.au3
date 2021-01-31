@@ -75,7 +75,7 @@ Global Const $TH32CS_SNAPMODULE32 =	0x00000010
 Global Const $TH32CS_SNAPPROCESS =	0x00000002
 Global Const $TH32CS_SNAPTHREAD =	0x00000004
 
-Global Const $__MODULEENTRY32 = "DWORD dwSize; DWORD th32ModuleID; DWORD th32ProcessID; DWORD GlblcntUsage; DWORD ProccntUsage; BYTE* modBaseAddr; DWORD modBaseSize; HMODULE hModule; char szModule[255 + 1]; char szExePath[260];"
+Global Const $__MODULEENTRY32 = "DWORD dwSize; DWORD th32ModuleID; DWORD th32ProcessID; DWORD GlblcntUsage; DWORD ProccntUsage; ptr modBaseAddr; DWORD modBaseSize; ptr hModule; char szModule[256]; char szExePath[260];"
 Global Const $__PROCESSENTRY32 = "DWORD dwSize; DWORD cntUsage; DWORD th32ProcessID; ptr th32DefaultHeapID; DWORD th32ModuleID; DWORD cntThreads; DWORD th32ParentProcessID; LONG pcPriClassBase; DWORD dwFlags; CHAR szExeFile[260];"
 Global Const $__MEMORY_BASIC_INFORMATION = "ptr BaseAddress; ptr AllocationBase; DWORD AllocationProtect; PTR RegionSize; DWORD State; DWORD Protect; DWORD Type;"
 Global $__currentsocket = 0
@@ -375,7 +375,7 @@ EndFunc
 ; Get all process
 ;
 ; [Return]
-;	success:	a 2d array contain pid and process name
+;	success:	a 2d array contains pid and process name
 ;	failed:		false and set @error to non-zero
 ;
 ; @error	1: KeCreateToolhelp32Snapshot failed
@@ -399,6 +399,42 @@ Func KeGetProcessList()
 		Redim $aProcessList[$count+1][2]
 		$aProcessList[$count][0] = DllStructGetData($processEntry, "th32ProcessID")
 		$aProcessList[$count][1] = DllStructGetData($processEntry, "szExeFile")
+	WEnd
+
+	KeCloseHandle($hSnapshot)
+	Return $aProcessList
+EndFunc
+
+
+
+
+; Get all process
+;
+; [Return]
+;	success:	a 2d array contains module base address and name
+;	failed:		false and set @error to non-zero
+;
+; @error	1: KeCreateToolhelp32Snapshot failed
+;
+; [Remarks]
+;			if success, the function return a 2d array
+;			$aProcess[n][0]:	module address
+;			$aProcess[n][1]:	module name
+Func KeGetProcessModuleList($pid)
+	Local $hSnapShot = KeCreateToolhelp32Snapshot(BitOR($TH32CS_SNAPMODULE, $TH32CS_SNAPMODULE32), $pid)
+	If @error Then Return SetError(1, 0, False)
+
+	Local $isFirst = True
+	Local $aProcessList[0][2]
+	While 1
+		$moduleEntry = KeModule32Next($hSnapshot, $isFirst)
+		If @error Then ExitLoop
+
+		$isFirst = False
+		Local $count = UBound($aProcessList)
+		Redim $aProcessList[$count+1][2]
+		$aProcessList[$count][0] = DllStructGetData($moduleEntry, "modBaseAddr")
+		$aProcessList[$count][1] = DllStructGetData($moduleEntry, "szExePath")
 	WEnd
 
 	KeCloseHandle($hSnapshot)
@@ -450,8 +486,8 @@ EndFunc
 ; @error	1: DllCall failed, @extended is the @error of DllCall
 ;			2: KeModule32Next returned false
 Func KeModule32Next($hSnapshot, $isFirst = False)
-    Local $moduleEntry = DllStructCreate($__MODULEENTRY32)
-
+	Local $moduleEntry = DllStructCreate($__MODULEENTRY32)
+	
 	Local $result = DllCall($__kesh_handle, "bool:cdecl", "KeModule32Next", "handle", $__currentsocket, "handle", $hSnapshot, "ptr", DllStructGetPtr($moduleEntry), "bool", $isFirst)
 
 	If @error Then Return SetError(1, @error, False)
