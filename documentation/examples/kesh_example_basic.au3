@@ -13,9 +13,6 @@ EndIf
 Local $AdbPath = "D:\LDPlayer\LDPlayer4.0\adb.exe"
 KeSetAdbPath($AdbPath)
 
-; set specific device if needed
-KeSetAdbDevice("emulator-5554")
-
 ; connect to the kesh server on port 21758, if the server isn't running then start it
 Local $socket = KeServerConnectOrCreate(21758)
 
