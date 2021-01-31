@@ -6,7 +6,7 @@
     _ArrayDisplay($aProcess)
 ```
 - Hàm sẽ trả về một mảng 2 chiều, chứa process ID và tên process, kết quả nên trông như thế này:<p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/process/getprocesslistresult.png" width="500"></p>
-- Tên process sẽ chứa đường dẫn đầy đủ, như: ```/system/bin/app_process32 com.google.android.gms```
+- Tên process sẽ chứa đường dẫn đầy đủ, như: ```/system/bin/app_process32 com.google.android.gms.ui```
 
 <br>
 
@@ -15,7 +15,7 @@
 ```autoit
     $pid = KeGetProcessID($processName)
 ```
-- ```$processName``` là tên của process trả về từ ```KeGetProcessList()```. Hoặc nó có thể là ```"com.google.android.gms"``` trong trường hợp sau:
+- ```$processName``` là tên của process trả về từ ```KeGetProcessList()```. Hoặc nó có thể là ```"com.google.android.gms.ui"``` trong trường hợp sau:
 <p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/process/ce_processlist.jpg" width="400"></p>
 
 <br>
