@@ -1,7 +1,7 @@
 #cs ---------------------------------------------------------------------------
 
-library:							demem
-.						a simple memory library for autoit
+library:							kesh
+.						android memory library for autoit
 
 author:         thedemons
 discord:		thedemons#8671
