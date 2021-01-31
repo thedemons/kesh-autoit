@@ -29,8 +29,9 @@ functions:
 	KeOpenProcess
 	KeReadProcessMemory
 	KeWriteProcessMemory
-	KeGetProcessID
 	KeGetProcessList
+	KeGetProcessID
+	KeGetProcessModuleList
 	KeGetModuleBase
 
 	KeCreateToolhelp32Snapshot
@@ -487,7 +488,7 @@ EndFunc
 ;			2: KeModule32Next returned false
 Func KeModule32Next($hSnapshot, $isFirst = False)
 	Local $moduleEntry = DllStructCreate($__MODULEENTRY32)
-	
+
 	Local $result = DllCall($__kesh_handle, "bool:cdecl", "KeModule32Next", "handle", $__currentsocket, "handle", $hSnapshot, "ptr", DllStructGetPtr($moduleEntry), "bool", $isFirst)
 
 	If @error Then Return SetError(1, @error, False)
