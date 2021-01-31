@@ -24,7 +24,7 @@
 - To get a list of all modules in the process, use:
 ```autoit
     $aModule = KeGetProcessModuleList($pid)
-	_ArrayDisplay($aModule)
+    _ArrayDisplay($aModule)
 ```
 - This function returns a 2D array of module base address and name, the results should look like this:<p align="center"><img src="https://raw.githubusercontent.com/thedemons/kesh-autoit/main/documentation/process/getprocessmodulelistresult.jpg" width="500"></p>
 
