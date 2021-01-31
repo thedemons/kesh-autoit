@@ -25,3 +25,8 @@ A simple Android memory library for AutoIt
 ### Donation
 - This project is under development, it still has a lot of features being developed, it's a very big help of your donation to keep the project running, please contact me anytime you feel like it! ♥
 - Discord: [thedemons#8671](https://discord.com/users/269920976236576769)
+
+### Donators
+- Nguyen Manh Tuong
+- Nguyen Hien
+- Do Vinh Trung
