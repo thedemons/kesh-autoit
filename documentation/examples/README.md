@@ -1,4 +1,4 @@
-#Examples
+# Examples
 ### Setup kesh
 ```autoit
 ; open kesh library
@@ -11,9 +11,6 @@ EndIf
 ; set path to adb.exe
 Local $AdbPath = "D:\LDPlayer\LDPlayer4.0\adb.exe"
 KeSetAdbPath($AdbPath)
-
-; set specific device if needed
-KeSetAdbDevice("emulator-5554")
 ```
 
 ### Start the kesh server
@@ -43,4 +40,30 @@ Local $baseAddress = KeGetModuleBase($pid, "app_process32")
 Local $readBase = KeReadInt($hProcess, $baseAddress)
 ; write a value to the base address
 KeWriteInt($hProcess, $baseAddress, 999999)
+```
+
+### Use kesh with multiple devices
+```autoit
+Local $dev1_name = "emulator-5554"
+Local $dev2_name = "127.0.0.1:5555"
+
+; Start kesh on device 1
+KeSetAdbDevice($dev1_name)
+Local $socket_dev1 = KeServerCreate()
+
+; Start kesh on device 2
+KeSetAdbDevice($dev2_name)
+Local $socket_dev2 = KeServerCreate()
+
+; Do stuff on device 1
+KeSetAdbDevice($dev1_name)
+KeServerSetSocket($socket_dev1)
+_ArrayDisplay(KeGetProcessList())
+...
+
+; Do stuff on device 2
+KeSetAdbDevice($dev2_name)
+KeServerSetSocket($socket_dev2)
+_ArrayDisplay(KeGetProcessList())
+...
 ```
