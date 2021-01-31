@@ -12,3 +12,8 @@
     $string = KeReadString($hProcess, 0x384DCF50, $stringLength=0)
 ```
 - If the ```$stringLength``` is set to 0, it'll auto detect the length
+- If you want to read a different type of value, you can use:
+```autoit
+    $value = KeRead($hProcess, 0x384DCF50, $type="int")
+```
+- See availables types of value [here]()
